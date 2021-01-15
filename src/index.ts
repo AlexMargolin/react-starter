@@ -1,1 +1,1 @@
-console.log("React0 TS!");
+import styles from './styles/global.module.scss'
