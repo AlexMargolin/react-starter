@@ -2,5 +2,16 @@
   "name": "react0",
   "version": "0.0.1",
   "private": true,
-  "author": "Alex Margolin <support@react0.com>"
+  "author": "Alex Margolin <support@react0.com>",
+  "scripts": {
+    "start": "webpack serve --progress --config webpack/webpack.dev.js",
+    "build": "webpack --config webpack/webpack.prod.js"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.14.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
 }
