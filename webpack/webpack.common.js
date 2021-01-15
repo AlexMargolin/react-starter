@@ -14,6 +14,21 @@ const htmlPluginOptions = {
     favicon: path.resolve(config.rootPath, config.publicDir, 'favicon.svg'),
 }
 
+const moduleRules = [
+    {
+        test: /\.(ts|tsx)$/,
+        use: {
+            loader: 'ts-loader',
+            options: {
+                logInfoToStdOut: true,
+            }
+        },
+        include: [
+            path.resolve(config.rootPath, 'src'),
+        ],
+    }
+]
+
 module.exports = {
     entry: path.resolve(config.rootPath, 'src/index.ts'),
     output: {
@@ -22,4 +37,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin(htmlPluginOptions),
     ],
+    resolve: {
+        alias: {
+            "@": path.resolve(config.rootPath, 'src')
+        },
+        extensions: ['.tsx', '.ts', '.js']
+    },
+    module: {
+        rules: moduleRules
+    }
 }
