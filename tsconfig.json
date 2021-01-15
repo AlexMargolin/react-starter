@@ -5,9 +5,11 @@
       "esnext"
     ],
     "jsx": "react",
-    "module": "es6",
+    "module": "commonjs",
     "sourceMap": true,
     "target": "esnext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
