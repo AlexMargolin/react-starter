@@ -1,14 +1,9 @@
-import { RuleSetRule } from "webpack"
-import { defaults } from "./webpack.defaults"
-import { appendRoot, envCmp } from "./webpack.utils"
-import MiniCssExtractPlugin, {
-  LoaderOptions,
-} from "mini-css-extract-plugin"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const defaults = require("./defaults")
+const { appendRoot, envCmp } = require("./utils")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-/**
- * Typescript loader rule.
- */
-export const tsRule = (): RuleSetRule => ({
+const tsRule = () => ({
   test: /\.(ts|tsx)$/,
   use: {
     loader: "ts-loader",
@@ -19,15 +14,12 @@ export const tsRule = (): RuleSetRule => ({
   include: [appendRoot(defaults.srcDir)],
 })
 
-/**
- * SCSS loader rule.
- */
-export const scssRule = (): RuleSetRule => ({
+const scssRule = () => ({
   test: /\.scss$/,
   use: [
     {
       loader: MiniCssExtractPlugin.loader,
-      options: {} as LoaderOptions,
+      options: {},
     },
     {
       loader: "css-loader",
@@ -50,3 +42,8 @@ export const scssRule = (): RuleSetRule => ({
     },
   ],
 })
+
+module.exports = {
+  tsRule,
+  scssRule,
+}

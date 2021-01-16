@@ -1,10 +1,11 @@
-import Webpack from "webpack"
-import { appendRoot } from "../webpack/webpack.utils"
-import { defaults } from "../webpack/webpack.defaults"
-import configuration from "../webpack/webpack.config"
-import WebpackDevServer, { Configuration } from "webpack-dev-server"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const webpack = require("webpack")
+const defaults = require("../webpack/defaults")
+const configuration = require("../webpack/config")
+const { appendRoot } = require("../webpack/utils")
+const WebpackDevServer = require("webpack-dev-server")
 
-const devServerConfiguration: Configuration = {
+const devServerConfiguration = {
   hot: true,
   port: 9000,
   open: true,
@@ -18,7 +19,7 @@ const devServerConfiguration: Configuration = {
   contentBase: appendRoot(defaults.publicDir),
 }
 
-const compiler = Webpack(configuration)
+const compiler = webpack(configuration)
 
 const devServer = new WebpackDevServer(
   compiler,

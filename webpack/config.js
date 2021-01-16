@@ -1,10 +1,10 @@
-import { Configuration } from "webpack"
-import * as rules from "./webpack.rules"
-import * as plugins from "./webpack.plugins"
-import { defaults } from "./webpack.defaults"
-import { appendRoot, envCmp } from "./webpack.utils"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const rules = require("./rules")
+const plugins = require("./plugins")
+const defaults = require("./defaults")
+const { envCmp, appendRoot } = require("./utils")
 
-const configuration: Configuration = {
+module.exports = {
   bail: envCmp(false, true),
   entry: {
     main: appendRoot(defaults.srcDir, defaults.mainFile),
@@ -29,5 +29,3 @@ const configuration: Configuration = {
   },
   plugins: [plugins.htmlPlugin, plugins.cssExtractPlugin],
 }
-
-export default configuration

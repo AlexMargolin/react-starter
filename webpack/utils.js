@@ -1,10 +1,11 @@
-import path from "path"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path")
 
 /**
  * Append root path to passed args.
  * @param args
  */
-export const appendRoot = (...args: string[]): string => {
+const appendRoot = (...args) => {
   const rootPath = path.dirname(__dirname)
   return path.resolve(rootPath, ...args)
 }
@@ -14,6 +15,11 @@ export const appendRoot = (...args: string[]): string => {
  * @param dev
  * @param prod
  */
-export const envCmp = <T, K>(dev: T, prod: K): T | K => {
+const envCmp = (dev, prod) => {
   return process.env.NODE_ENV === "development" ? dev : prod
+}
+
+module.exports = {
+  envCmp,
+  appendRoot,
 }

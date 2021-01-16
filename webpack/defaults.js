@@ -1,4 +1,4 @@
-export const defaults = {
+module.exports = {
   rootId: "app",
   srcDir: "src",
   outputDir: "build",

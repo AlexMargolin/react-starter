@@ -1,12 +1,10 @@
-import { defaults } from "./webpack.defaults"
-import { appendRoot, envCmp } from "./webpack.utils"
-import HtmlWebpackPlugin from "html-webpack-plugin"
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const defaults = require("./defaults")
+const { appendRoot, envCmp } = require("./utils")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-/**
- * HtmlWebpackPlugin instance.
- */
-export const htmlPlugin = new HtmlWebpackPlugin({
+const htmlPlugin = new HtmlWebpackPlugin({
   title: process.env.npm_package_name,
   meta: {
     charset: "UTF-8",
@@ -18,10 +16,7 @@ export const htmlPlugin = new HtmlWebpackPlugin({
   favicon: appendRoot(defaults.publicDir, "favicon.svg"),
 })
 
-/**
- * MiniCssExtractPlugin instance.
- */
-export const cssExtractPlugin = new MiniCssExtractPlugin({
+const cssExtractPlugin = new MiniCssExtractPlugin({
   filename: envCmp(
     "[name]-[contenthash:5].css",
     "[contenthash:5].css",
@@ -31,3 +26,8 @@ export const cssExtractPlugin = new MiniCssExtractPlugin({
     "[contenthash:5].css",
   ),
 })
+
+module.exports = {
+  htmlPlugin,
+  cssExtractPlugin,
+}

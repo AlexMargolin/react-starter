@@ -1,8 +1,8 @@
-import webpack from "webpack"
-import configuration from "../webpack/webpack.config"
+/* eslint-disable @typescript-eslint/no-var-requires */
+const webpack = require("webpack")
+const configuration = require("../webpack/config")
 
 const compiler = webpack(configuration)
-
 compiler.run((err, stats) => {
   if (err) {
     console.error(err.stack || err)
