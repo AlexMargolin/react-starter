@@ -4,6 +4,9 @@ const { appendRoot, envCmp } = require("./utils")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
+/**
+ * @type {HtmlWebpackPlugin}
+ */
 const htmlPlugin = new HtmlWebpackPlugin({
   title: process.env.npm_package_name,
   meta: {
@@ -16,6 +19,9 @@ const htmlPlugin = new HtmlWebpackPlugin({
   favicon: appendRoot(defaults.publicDir, "favicon.svg"),
 })
 
+/**
+ * @type {MiniCssExtractPlugin}
+ */
 const cssExtractPlugin = new MiniCssExtractPlugin({
   filename: envCmp(
     "[name]-[contenthash:5].css",
