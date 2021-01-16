@@ -5,11 +5,9 @@
       "esnext"
     ],
     "jsx": "react",
-    "module": "commonjs",
+    "module": "es6",
     "sourceMap": true,
     "target": "esnext",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
@@ -19,6 +17,6 @@
     }
   },
   "include": [
-    "src/**/*"
+    "./src/**/*",
   ]
 }
