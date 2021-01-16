@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require("webpack")
 const defaults = require("../webpack/defaults")
-const configuration = require("../webpack/config")
 const { appendRoot } = require("../webpack/utils")
 const WebpackDevServer = require("webpack-dev-server")
+const configuration = require("../webpack/webpack.config")
 
 const devServerConfiguration = {
   hot: true,

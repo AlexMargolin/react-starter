@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const webpack = require("webpack")
-const configuration = require("../webpack/config")
+const configuration = require("../webpack/webpack.config")
 
 const compiler = webpack(configuration)
 compiler.run((err, stats) => {
