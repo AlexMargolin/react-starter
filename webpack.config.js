@@ -79,6 +79,20 @@ const scssRule = () => ({
 })
 
 /**
+ * Images Rule.
+ */
+const imagesRule = () => ({
+  test: /\.(svg|png|jpe?g|gif)$/,
+  type: "asset/resource",
+  generator: {
+    filename: envCmp(
+      "images/[name]-[contenthash:5][ext]",
+      "images/[contenthash:5][ext]",
+    ),
+  },
+})
+
+/**
  * @type {HtmlWebpackPlugin}
  */
 const htmlPlugin = new HtmlWebpackPlugin({
@@ -112,7 +126,13 @@ const cleanPlugin = new CleanWebpackPlugin({
   cleanStaleWebpackAssets: true,
 })
 
+/**
+ * Webpack Configuration
+ */
 module.exports = {
+  experiments: {
+    asset: true,
+  },
   bail: envCmp(false, true),
   mode: envCmp("development", "production"),
   devtool: envCmp("inline-source-map", false),
@@ -135,7 +155,6 @@ module.exports = {
   devServer: {
     hot: true,
     port: 9000,
-    open: true,
     overlay: true,
     compress: true,
     host: "localhost",
@@ -143,7 +162,7 @@ module.exports = {
     contentBase: appendRoot(defaults.publicDir),
   },
   module: {
-    rules: [tsRule(), scssRule()],
+    rules: [tsRule(), scssRule(), imagesRule()],
   },
   plugins: [cleanPlugin, htmlPlugin, cssExtractPlugin],
 }
