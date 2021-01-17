@@ -2,6 +2,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 /**
  * default webpack configuration
@@ -104,6 +105,13 @@ const cssExtractPlugin = new MiniCssExtractPlugin({
   ),
 })
 
+/**
+ * @type {CleanWebpackPlugin}
+ */
+const cleanPlugin = new CleanWebpackPlugin({
+  cleanStaleWebpackAssets: true,
+})
+
 module.exports = {
   bail: envCmp(false, true),
   mode: envCmp("development", "production"),
@@ -137,5 +145,5 @@ module.exports = {
   module: {
     rules: [tsRule(), scssRule()],
   },
-  plugins: [htmlPlugin, cssExtractPlugin],
+  plugins: [cleanPlugin, htmlPlugin, cssExtractPlugin],
 }

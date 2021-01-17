@@ -7,6 +7,7 @@
     "jsx": "react-jsx",
     "module": "es6",
     "sourceMap": true,
+    "noImplicitReturns": true,
     "target": "esnext",
     "moduleResolution": "Node",
     "noImplicitAny": true,
@@ -21,5 +22,8 @@
   "include": [
     "./src/**/*"
   ],
-  "exclude": ["node_modules", "build"]
+  "exclude": [
+    "build",
+    "node_modules",
+  ]
 }
