@@ -6,9 +6,4 @@ describe("<App/>", () => {
     const { container } = render(<App />)
     expect(container.firstChild).not.toBeEmptyDOMElement()
   })
-
-  test("should have 'app' class", () => {
-    const { container } = render(<App />)
-    expect(container.firstChild).toHaveClass("app")
-  })
 })
