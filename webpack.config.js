@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires,max-lines */
 const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 /**
  * default webpack configuration
@@ -81,6 +81,7 @@ const scssRule = () => ({
  * @type {HtmlWebpackPlugin}
  */
 const htmlPlugin = new HtmlWebpackPlugin({
+  inject: "body",
   title: process.env.npm_package_name,
   meta: {
     charset: "UTF-8",
