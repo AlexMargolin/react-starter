@@ -4,11 +4,12 @@
       "dom",
       "esnext"
     ],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "es6",
     "sourceMap": true,
     "target": "esnext",
     "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [

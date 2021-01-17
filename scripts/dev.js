@@ -9,13 +9,10 @@ const devServerConfiguration = {
   hot: true,
   port: 9000,
   open: true,
-  quiet: true,
   overlay: true,
   compress: true,
   host: "localhost",
   transportMode: "ws",
-  watchContentBase: true,
-  clientLogLevel: "none",
   contentBase: appendRoot(defaults.publicDir),
 }
 

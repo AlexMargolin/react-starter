@@ -30,6 +30,7 @@ const scssRule = () => ({
             "[local]-[contenthash:5]",
             "[contenthash:5]",
           ),
+          exportLocalsConvention: "camelCaseOnly",
         },
       },
     },
