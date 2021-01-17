@@ -1,4 +1,9 @@
 /**
  * SCSS files extension
  */
-declare module '*.scss'
+declare module "*.scss"
+
+/**
+ * SVG files extension
+ */
+declare module "*.svg"

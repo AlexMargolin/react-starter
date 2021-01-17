@@ -1,5 +1,16 @@
 @import "reset";
+@import "colors";
+@import "functions";
+
+html{
+  font-size: 100%;
+}
 
 .app{
-  background-color: #fff;
+  display: flex;
+  min-height: 100vh;
+  font-size: rem(15);
+  flex-direction: column;
+  background-color: $background;
+  font-family: 'Open Sans Condensed', sans-serif;
 }

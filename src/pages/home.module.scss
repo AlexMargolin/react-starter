@@ -1,0 +1,48 @@
+@import "~@/styles/colors";
+@import "~@/styles/functions";
+
+.home {
+  margin: auto;
+  text-align: center;
+
+  &__logo {
+    fill: $text;
+    width: 75px;
+    height: 75px;
+    margin-bottom: rem(40);
+  }
+
+  &__heading {
+    color: $text;
+    font-weight: normal;
+  }
+
+  &__mark {
+    padding: 0 10px;
+    color: $background;
+    border-radius: 1px;
+    display: inline-block;
+    background-color: $primary;
+  }
+
+  &__link {
+    right: rem(20);
+    bottom: rem(20);
+    display: block;
+    position: fixed;
+
+    &-icon {
+      fill: #fff;
+      width: 30px;
+      height: 30px;
+      transition: .15s fill ease-in-out, .15s transform ease;
+    }
+
+    &:hover {
+      .home__link-icon {
+        fill: $primary;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
