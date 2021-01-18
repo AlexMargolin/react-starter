@@ -1,6 +1,6 @@
 {
   "name": "react-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Alex Margolin <csight@msn.com>",
   "bugs": {
     "email": "csight@msn.com"
@@ -25,6 +25,7 @@
     "@typescript-eslint/parser": "^4.13.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.22.0",

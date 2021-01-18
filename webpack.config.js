@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires,max-lines */
 const path = require("path")
+const webpack = require("webpack")
+const envs = require("./env.config")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
@@ -127,6 +129,11 @@ const cleanPlugin = new CleanWebpackPlugin({
 })
 
 /**
+ * @type {webpack.EnvironmentPlugin}
+ */
+const environmentPlugin = new webpack.EnvironmentPlugin(envs)
+
+/**
  * Webpack Configuration
  */
 module.exports = {
@@ -164,5 +171,10 @@ module.exports = {
   module: {
     rules: [tsRule(), styleRule(), imagesRule()],
   },
-  plugins: [cleanPlugin, htmlPlugin, cssExtractPlugin],
+  plugins: [
+    htmlPlugin,
+    cleanPlugin,
+    cssExtractPlugin,
+    environmentPlugin,
+  ],
 }
