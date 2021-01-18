@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 /**
- * default webpack configuration
+ * default paths & files.
  */
 const defaults = {
   srcDir: "src",
@@ -23,7 +23,7 @@ const appendRoot = (...args) => {
 }
 
 /**
- * Returns a value based on active environment
+ * Returns a value based on active the environment
  * @param dev
  * @param prod
  */
@@ -86,8 +86,8 @@ const imagesRule = () => ({
   type: "asset/resource",
   generator: {
     filename: envCmp(
-      "images/[name]-[contenthash:5][ext]",
-      "images/[contenthash:5][ext]",
+      "assets/[name]-[contenthash:5][ext]",
+      "assets/[contenthash:5][ext]",
     ),
   },
 })
@@ -130,9 +130,6 @@ const cleanPlugin = new CleanWebpackPlugin({
  * Webpack Configuration
  */
 module.exports = {
-  experiments: {
-    asset: true,
-  },
   bail: envCmp(false, true),
   mode: envCmp("development", "production"),
   devtool: envCmp("inline-source-map", false),
@@ -145,6 +142,9 @@ module.exports = {
       "[name]-[contenthash:5].js",
       "[contenthash:5].js",
     ),
+  },
+  experiments: {
+    asset: true,
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],

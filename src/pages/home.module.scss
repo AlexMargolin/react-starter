@@ -1,33 +1,30 @@
-@import "~@/styles/colors";
-@import "~@/styles/functions";
-
 .home {
   margin: auto;
   text-align: center;
 
   &__logo {
-    fill: $text;
     width: 75px;
     height: 75px;
-    margin-bottom: rem(40);
+    fill: #D8D2E1;
+    margin-bottom: 40px;
   }
 
   &__heading {
-    color: $text;
+    color: #D8D2E1;
     font-weight: normal;
   }
 
   &__mark {
-    padding: 0 10px;
-    color: $background;
-    border-radius: 1px;
+    color: #232323;
+    padding: 0 5px;
+    border-radius: 2px;
     display: inline-block;
-    background-color: $primary;
+    background-color: #fb619a;
   }
 
   &__link {
-    right: rem(20);
-    bottom: rem(20);
+    right: 20px;
+    bottom: 20px;
     display: block;
     position: fixed;
 
@@ -38,9 +35,10 @@
       transition: .15s fill ease-in-out, .15s transform ease;
     }
 
-    &:hover {
+    &:hover,
+    &:focus{
       .home__link-icon {
-        fill: $primary;
+        fill: #fb619a;
         transform: scale(1.1);
       }
     }

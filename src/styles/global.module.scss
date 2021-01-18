@@ -1,6 +1,4 @@
 @import "reset";
-@import "colors";
-@import "functions";
 
 html{
   font-size: 100%;
@@ -9,8 +7,7 @@ html{
 .app{
   display: flex;
   min-height: 100vh;
-  font-size: rem(15);
   flex-direction: column;
-  background-color: $background;
+  background-color: #232323;
   font-family: 'Open Sans Condensed', sans-serif;
 }
