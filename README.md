@@ -1,4 +1,5 @@
-## Minimal React Starter
+## Minimal React Starter (1.1.0)
+<hr>
 
 ### Features:
 
@@ -10,8 +11,28 @@
 1. `@/*` alias
    (can be used instead of `./src/*`)
 
+### Environment Variables
+Environment Variables can be loaded through .env.* files.
+
+| File Name        | Condition                 |
+|------------------|---------------------------|
+| .env             | Always                    |
+| .env.development | Development Only (`run`)  |
+| .env.production  | Production Only (`build`) |
+
+> NOTE: variable names must be prefixed with `APP_PUBLIC_`
+> in order to be accessible through the App.
+
+> eg: `APP_PUBLIC_API_URL=https://www.api.domain.com`
+
 ### Scripts
 
 1. `dev` run a local development server (webpack-dev-server)
 1. `build` build the project for deployment
 1. `test` run tests with Jest
+
+<hr />
+
+### Changelog
+
+`1.1.0` - Environment Variables support

@@ -9,10 +9,15 @@ const dotenv = require("dotenv")
 const ALLOWED_PREFIX = /APP_PUBLIC_/
 
 /**
- * Valid env variable types
+ * .env files load order
+ * high importance -> low importance
  * @type {string[]}
  */
-const ALLOWED_ENV_TYPES = [".env.development", ".env.production"]
+const ENV_LOAD_ORDER = [
+  ".env.development",
+  ".env.production",
+  ".env",
+]
 
 /**
  * Make sure environment can be determined
@@ -22,69 +27,66 @@ if (!process.env.NODE_ENV) {
 }
 
 /**
- * Read root directory files.
- * Filer only those with .env
+ * lookup files beginning with .env
+ * @type {[]}
  */
-const envFiles = fs
+const foundEnvFiles = fs
   .readdirSync(__dirname)
-  .filter(file => file.includes(".env"))
+  .filter(file => /^\.env/.test(file))
 
 /**
  * Bail early if no files where found
  */
-if (!envFiles.length) {
-  console.log("No .env files were found")
+if (!foundEnvFiles.length) {
+  console.log("No .env files were loaded")
   return
 }
 
 /**
- * Active env file name
- * @type {string}
+ * Current scope files
+ * @type {string[]}
  */
-const envFileName = `.env.${process.env.NODE_ENV}`
+const scopeFiles = foundEnvFiles.filter(filename => {
+  // Keep only .env or .env.{active_environment}
+  const pattern = new RegExp(
+    `^\\.env$|\\.env\\.${process.env.NODE_ENV}$`,
+  )
 
-/**
- * Filter expected .env
- * @type {boolean}
- */
-const hasActiveVariable = envFiles.some(
-  file => file === envFileName,
-)
+  return pattern.test(filename)
+})
 
-if (!hasActiveVariable) {
+if (!scopeFiles.length) {
   throw new Error("No matching environment files were loaded")
 }
 
 /**
- * Make sure .env scope is valid
+ * dontenv automatically applies variables to the
+ * process.env object
+ * @type {{}|*}
  */
-if (!ALLOWED_ENV_TYPES.includes(envFileName)) {
-  throw new Error("Invalid .env file scope was provided")
-}
+const envVars = ENV_LOAD_ORDER.reduce((all, filename) => {
+  if (!scopeFiles.includes(filename)) {
+    return all
+  }
+
+  const { parsed } = dotenv.config({
+    path: filename,
+  })
+
+  // First allocated items get the precedence
+  return Object.assign(parsed, all)
+}, {})
 
 /**
- * @type {Buffer}
+ * Keep only prefixed variables
+ * @type {[]}
  */
-const envSrc = fs.readFileSync(envFileName)
+const publicEnvVars = Object.keys(envVars).filter(key =>
+  ALLOWED_PREFIX.test(key),
+)
 
 /**
- * All variables
- * @type {DotenvParseOutput}
- */
-const envVars = dotenv.parse(envSrc)
-
-/**
- * allowed only
+ * Export public variables to be defined by webpack
  * @type {T[]}
  */
-const environmentVariables = Object.entries(envVars)
-  .filter(([key]) => ALLOWED_PREFIX.test(key))
-  .reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value,
-    }),
-    {},
-  )
-
-module.exports = environmentVariables
+module.exports = publicEnvVars
