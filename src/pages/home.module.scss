@@ -1,0 +1,46 @@
+.home {
+  margin: auto;
+  text-align: center;
+
+  &__logo {
+    width: 75px;
+    height: 75px;
+    fill: #D8D2E1;
+    margin-bottom: 40px;
+  }
+
+  &__heading {
+    color: #D8D2E1;
+    font-weight: normal;
+  }
+
+  &__mark {
+    color: #232323;
+    padding: 0 5px;
+    border-radius: 2px;
+    display: inline-block;
+    background-color: #fb619a;
+  }
+
+  &__link {
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    position: fixed;
+
+    &-icon {
+      fill: #fff;
+      width: 30px;
+      height: 30px;
+      transition: .15s fill ease-in-out, .15s transform ease;
+    }
+
+    &:hover,
+    &:focus{
+      .home__link-icon {
+        fill: #fb619a;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

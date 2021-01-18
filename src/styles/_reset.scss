@@ -1,15 +1,47 @@
 html {
   line-height: 1.15;
+  box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+button{
+  font-size: inherit;
+  -webkit-appearance: button;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+textarea {
+  resize: vertical;
+  font-size: initial;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
 }
