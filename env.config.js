@@ -35,14 +35,6 @@ const foundEnvFiles = fs
   .filter(file => /^\.env/.test(file))
 
 /**
- * Bail early if no files where found
- */
-if (!foundEnvFiles.length) {
-  console.log("No .env files were loaded")
-  return
-}
-
-/**
  * Current scope files
  * @type {string[]}
  */
@@ -54,10 +46,6 @@ const scopeFiles = foundEnvFiles.filter(filename => {
 
   return pattern.test(filename)
 })
-
-if (!scopeFiles.length) {
-  throw new Error("No matching environment files were loaded")
-}
 
 /**
  * dontenv automatically applies variables to the
@@ -83,6 +71,10 @@ const envVars = ENV_LOAD_ORDER.reduce((all, filename) => {
  */
 const publicEnvVars = Object.keys(envVars).filter(key =>
   ALLOWED_PREFIX.test(key),
+)
+
+console.log(
+  `Loaded ${scopeFiles.length} .env file(s) with ${publicEnvVars.length} public variable(s)`,
 )
 
 /**
