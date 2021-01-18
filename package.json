@@ -6,7 +6,8 @@
     "email": "csight@msn.com"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/AlexMargolin/react-starter"
   },
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
