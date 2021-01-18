@@ -1,8 +1,13 @@
 {
-  "name": "react0",
-  "version": "0.0.2",
-  "private": true,
-  "author": "Alex Margolin <support@react0.com>",
+  "name": "react-starter",
+  "version": "1.0.0",
+  "author": "Alex Margolin <csight@msn.com>",
+  "bugs": {
+    "email": "csight@msn.com"
+  },
+  "repository": {
+    "type": "git"
+  },
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
     "build": "NODE_ENV=production webpack",

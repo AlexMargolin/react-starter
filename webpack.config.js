@@ -46,10 +46,10 @@ const tsRule = () => ({
 })
 
 /**
- * Scss Rule.
+ * Style Rule.
  */
-const scssRule = () => ({
-  test: /\.scss$/,
+const styleRule = () => ({
+  test: /\.s?css$/,
   use: [
     {
       loader: MiniCssExtractPlugin.loader,
@@ -162,7 +162,7 @@ module.exports = {
     contentBase: appendRoot(defaults.publicDir),
   },
   module: {
-    rules: [tsRule(), scssRule(), imagesRule()],
+    rules: [tsRule(), styleRule(), imagesRule()],
   },
   plugins: [cleanPlugin, htmlPlugin, cssExtractPlugin],
 }
