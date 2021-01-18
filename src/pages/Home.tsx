@@ -15,10 +15,11 @@ const Home: React.FC<Props> = props => (
     </h1>
 
     <a
-      href="#"
       target="_blank"
+      rel="noreferrer"
       className={styles.homeLink}
       aria-label="Visit the github repository page"
+      href="https://github.com/AlexMargolin/react-starter"
     >
       <svg className={styles.homeLinkIcon} aria-hidden="true">
         <use xlinkHref={`${sprite}#svg-github`} />
