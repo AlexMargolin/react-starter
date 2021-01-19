@@ -3,6 +3,13 @@ const fs = require("fs")
 const dotenv = require("dotenv")
 
 /**
+ * Make sure environment can be determined
+ */
+if (!process.env.NODE_ENV) {
+  throw new Error("Node environment cannot be determined")
+}
+
+/**
  * Only allow prefixed variables
  * @type {RegExp}
  */
@@ -18,13 +25,6 @@ const ENV_LOAD_ORDER = [
   ".env.production",
   ".env",
 ]
-
-/**
- * Make sure environment can be determined
- */
-if (!process.env.NODE_ENV) {
-  throw new Error("Node environment cannot be determined")
-}
 
 /**
  * lookup files beginning with .env
