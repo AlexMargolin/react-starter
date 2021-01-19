@@ -51,7 +51,7 @@ const tsRule = () => ({
  * Style Rule.
  */
 const styleRule = () => ({
-  test: /\.s?css$/,
+  test: /\.(css|scss)$/,
   use: [
     {
       loader: MiniCssExtractPlugin.loader,
