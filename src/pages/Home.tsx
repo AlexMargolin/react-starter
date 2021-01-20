@@ -1,3 +1,4 @@
+import { Chip } from "@/components"
 import styles from "./home.module.scss"
 import sprite from "@/assets/sprite.svg"
 
@@ -10,8 +11,7 @@ const Home: React.FC<Props> = props => (
     </svg>
 
     <h1 className={styles.homeHeading}>
-      A minimal <mark className={styles.homeMark}>React</mark>{" "}
-      Starter
+      A minimal <Chip>React</Chip> Starter
     </h1>
 
     <a
