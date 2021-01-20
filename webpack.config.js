@@ -103,6 +103,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
   title: process.env.npm_package_name,
   meta: {
     charset: "UTF-8",
+    description: process.env.npm_package_description,
   },
   template: appendRoot(defaults.publicDir, "index.ejs"),
   favicon: appendRoot(defaults.publicDir, "favicon.svg"),

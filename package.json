@@ -1,6 +1,7 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "react-starter",
+  "description": "A minimal dependency React Starter Template",
   "author": "Alex Margolin <csight@msn.com>",
   "bugs": {
     "email": "csight@msn.com"
