@@ -62,6 +62,7 @@ const styleRule = () => ({
       options: {
         sourceMap: envCmp(true, false),
         modules: {
+          auto: true,
           localIdentName: envCmp(
             "[local]-[contenthash:5]",
             "[contenthash:5]",
