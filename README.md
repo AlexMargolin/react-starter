@@ -15,9 +15,9 @@ Environment Variables can be loaded through .env.* files.
 
 | File Name        | Condition                 |
 |------------------|---------------------------|
-| .env             | Always                    |
-| .env.development | Development Only (`run`)  |
+| .env.development | Development Only (`dev`)  |
 | .env.production  | Production Only (`build`) |
+| .env             | Always                    |
 
 > NOTE: variable names must be prefixed with `APP_PUBLIC_`
 > in order to be accessible through the App.
