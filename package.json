@@ -1,10 +1,11 @@
 {
+  "version": "1.2.0",
   "name": "react-starter",
-  "version": "1.1.0",
   "author": "Alex Margolin <csight@msn.com>",
   "bugs": {
     "email": "csight@msn.com"
   },
+  "sideEffects": ["*.scss", "*.css"],
   "repository": {
     "type": "git",
     "url": "https://github.com/AlexMargolin/react-starter"
