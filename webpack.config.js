@@ -82,10 +82,11 @@ const imagesRule = () => ({
  * @type {HtmlWebpackPlugin}
  */
 const htmlPlugin = new HtmlWebpackPlugin({
-  inject: "body",
+  inject: "head",
   title: process.env.npm_package_name,
   meta: {
     charset: "UTF-8",
+    description: "Minimal dependency React Starter",
   },
   template: appendRoot(defaults.publicDir, "index.ejs"),
   favicon: appendRoot(defaults.publicDir, "favicon.svg"),
@@ -131,8 +132,20 @@ module.exports = {
     path: appendRoot(defaults.outputDir),
     filename: envCmp(
       "[name]-[contenthash:5].js",
-      "[contenthash:5].js",
+      "[name]-[contenthash:5].js",
     ),
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          enforce: true,
+          name: "vendor",
+          chunks: "initial",
+          test: /node_modules/,
+        },
+      },
+    },
   },
   experiments: {
     asset: true,
