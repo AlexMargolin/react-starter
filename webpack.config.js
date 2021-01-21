@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires,max-lines */
-const path = require("path")
+/* eslint-disable max-lines */
 const webpack = require("webpack")
 const envs = require("./env.config")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { appendRoot, envCmp } = require("./scripts/utils")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 /**
  * default paths & files.
@@ -14,23 +14,6 @@ const defaults = {
   outputDir: "build",
   publicDir: "public",
   mainFile: "index.tsx",
-}
-
-/**
- * Append root path to passed args.
- * @param args
- */
-const appendRoot = (...args) => {
-  return path.resolve(__dirname, ...args)
-}
-
-/**
- * Returns a value based on active the environment
- * @param dev
- * @param prod
- */
-const envCmp = (dev, prod) => {
-  return process.env.NODE_ENV === "development" ? dev : prod
 }
 
 /**
@@ -135,7 +118,7 @@ const cleanPlugin = new CleanWebpackPlugin({
 const environmentPlugin = new webpack.EnvironmentPlugin(envs)
 
 /**
- * Webpack Configuration
+ * @type {webpack.Configuration}
  */
 module.exports = {
   bail: envCmp(false, true),
@@ -167,6 +150,7 @@ module.exports = {
     compress: true,
     host: "localhost",
     transportMode: "ws",
+    stats: "errors-only",
     contentBase: appendRoot(defaults.publicDir),
   },
   module: {

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires,max-lines */
+/* eslint-disable max-lines */
 const fs = require("fs")
 const dotenv = require("dotenv")
 
@@ -74,6 +74,7 @@ const publicEnvVars = Object.keys(envVars).filter(key =>
 )
 
 console.log(
+  "\x1b[36m%s\x1b[0m",
   `Loaded ${scopeFiles.length} .env file(s) with ${publicEnvVars.length} public variable(s)`,
 )
 

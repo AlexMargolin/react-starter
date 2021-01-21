@@ -1,18 +1,21 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": "react-starter",
   "author": "Alex Margolin <csight@msn.com>",
   "bugs": {
     "email": "csight@msn.com"
   },
-  "sideEffects": ["*.scss", "*.css"],
+  "sideEffects": [
+    "*.scss",
+    "*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AlexMargolin/react-starter"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack serve",
-    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development node scripts/dev",
+    "build": "NODE_ENV=production node scripts/build",
     "test": "jest"
   },
   "devDependencies": {
@@ -30,7 +33,7 @@
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.22.0",
-    "html-webpack-plugin": "^4.5.1",
+    "html-webpack-plugin": "^5.0.0-alpha.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.4",
@@ -41,7 +44,6 @@
     "ts-loader": "^8.0.14",
     "typescript": "^4.1.3",
     "webpack": "^5.14.0",
-    "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
