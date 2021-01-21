@@ -132,7 +132,7 @@ module.exports = {
     path: appendRoot(defaults.outputDir),
     filename: envCmp(
       "[name]-[contenthash:5].js",
-      "[name]-[contenthash:5].js",
+      "[contenthash:5].js",
     ),
   },
   optimization: {
