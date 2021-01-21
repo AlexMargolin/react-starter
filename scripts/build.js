@@ -2,7 +2,6 @@ const webpack = require("webpack")
 const config = require("../webpack.config")
 
 /**
- *
  * @type {webpack.Compiler}
  */
 const compiler = webpack(config)

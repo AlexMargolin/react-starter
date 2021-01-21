@@ -9,7 +9,7 @@ const appendRoot = (...args) => {
 }
 
 /**
- * Returns a value based on active the environment
+ * Returns a value based on the active environment
  * @param dev
  * @param prod
  */
