@@ -27,4 +27,9 @@ rules:
   linebreak-style:
     - error
     - unix
+overrides:
+  - files:
+      - "*.js"
+    rules:
+      "@typescript-eslint/no-var-requires": "off"
 
