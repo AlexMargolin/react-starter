@@ -1,4 +1,4 @@
-## Minimal React Starter (1.2.0)
+## Minimal React Starter (1.3.0)
 
 ### Features:
 
@@ -33,6 +33,8 @@ Environment Variables can be loaded through .env.* files.
 <hr />
 
 ### Changelog
+
+`1.3.0` - Separated Webpack scripts into separate files
 
 `1.2.0` - Better Treeshaking support & Example `Chip` Ui component
 
