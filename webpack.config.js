@@ -50,7 +50,7 @@ const styleRule = () => ({
             "[local]-[contenthash:5]",
             "[contenthash:5]",
           ),
-          exportLocalsConvention: "camelCaseOnly",
+          exportLocalsConvention: "camelCase",
         },
       },
     },
