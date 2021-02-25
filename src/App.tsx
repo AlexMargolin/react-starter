@@ -1,6 +1,7 @@
+import { FC } from "react"
 import { Home } from "@/pages"
 
-const App: React.FC = () => {
+const App: FC = () => {
   return <Home />
 }
 

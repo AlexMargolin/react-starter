@@ -1,10 +1,11 @@
+import { FC } from "react"
 import { Chip } from "@/components"
 import styles from "./home.module.scss"
 import sprite from "@/assets/sprite.svg"
 
 export interface Props {}
 
-const Home: React.FC<Props> = props => (
+const Home: FC<Props> = props => (
   <div className={styles.home}>
     <svg className={styles.homeLogo} aria-hidden="true">
       <use xlinkHref={`${sprite}#svg-logo`} />
