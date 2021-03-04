@@ -1,10 +1,17 @@
-import { FC } from "react"
-import styles from "./chip.module.scss"
+import css from "./chip.module.scss"
+import { forwardRef, HTMLAttributes } from "react"
 
-export interface Props {}
+export type Props = HTMLAttributes<HTMLSpanElement>
 
-const Chip: FC<Props> = props => {
-  return <span className={styles.chip}>{props.children}</span>
-}
+export default forwardRef<HTMLSpanElement, Props>(function Chip(
+  props,
+  ref,
+) {
+  const { children, ...rest } = props
 
-export default Chip
+  return (
+    <span ref={ref} className={css.chip} {...rest}>
+      {children}
+    </span>
+  )
+})
