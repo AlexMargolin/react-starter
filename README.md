@@ -1,4 +1,4 @@
-## Minimal Dependency React Starter (1.3.1)
+## Minimal Dependency React Starter (1.3.3)
 
 ### Features:
 
