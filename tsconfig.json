@@ -11,6 +11,7 @@
     "target": "esnext",
     "moduleResolution": "Node",
     "noImplicitAny": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
