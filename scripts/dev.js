@@ -1,3 +1,9 @@
+/**
+ * Define Node Environment
+ * @type {string}
+ */
+process.env.NODE_ENV = "development"
+
 const webpack = require("webpack")
 const config = require("../webpack.config")
 const webpackDevServer = require("webpack-dev-server")

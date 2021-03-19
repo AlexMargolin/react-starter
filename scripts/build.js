@@ -1,3 +1,9 @@
+/**
+ * Define Node Environment
+ * @type {string}
+ */
+process.env.NODE_ENV = "production"
+
 const webpack = require("webpack")
 const config = require("../webpack.config")
 

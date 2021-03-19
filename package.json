@@ -14,8 +14,8 @@
     "url": "https://github.com/AlexMargolin/react-starter"
   },
   "scripts": {
-    "dev": "NODE_ENV=development node scripts/dev",
-    "build": "NODE_ENV=production node scripts/build",
+    "dev": "node scripts/dev",
+    "build": "node scripts/build",
     "test": "jest"
   },
   "devDependencies": {
