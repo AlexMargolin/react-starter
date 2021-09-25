@@ -1,6 +1,7 @@
 env:
   es6: true
   node: true
+  jest: true
   browser: true
   commonjs: true
 extends:
@@ -12,24 +13,31 @@ parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
     jsx: true
-  ecmaVersion: 12
   sourceType: module
 plugins:
   - react
   - '@typescript-eslint'
 rules:
+  line-comment-position:
+    - error
+    - position: "above"
+  no-console: "error"
   react/jsx-uses-react: "off"
   react/react-in-jsx-scope: "off"
   react/prop-types: "off"
+  react/display-name: "off"
+  react/jsx-curly-brace-presence: "error"
+  yoda:
+    - error
+    - "always"
   max-lines:
     - error
-    - 80
-  linebreak-style:
-    - error
-    - unix
+    - skipBlankLines: true
+      skipComments: true
+      max: 150
 overrides:
   - files:
       - "*.js"
     rules:
+      "linebreak-style": "off"
       "@typescript-eslint/no-var-requires": "off"
-

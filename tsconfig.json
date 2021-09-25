@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "lib": [
-      "dom",
-      "esnext"
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
     ],
     "jsx": "react-jsx",
-    "module": "es6",
+    "module": "ESNext",
     "sourceMap": true,
     "noImplicitReturns": true,
     "target": "esnext",

@@ -1,16 +1,17 @@
 import App from "@/App"
 import React from "react"
 import ReactDOM from "react-dom"
-import styles from "@/styles/global.module.scss"
+import modules from "@/styles/global.module.scss"
 
-const Root = document.createElement("div")
-Object.assign(Root, {
-  className: styles.app,
+const root = document.createElement("div")
+
+Object.assign(root, {
+  className: modules.app,
 })
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.body.appendChild(Root),
+  document.body.appendChild(root),
 )

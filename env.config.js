@@ -13,7 +13,7 @@ if (!process.env.NODE_ENV) {
  * Only allow prefixed variables
  * @type {RegExp}
  */
-const ALLOWED_PREFIX = /APP_PUBLIC_/
+const ALLOWED_PREFIX = /APP_/
 
 /**
  * .env files load order

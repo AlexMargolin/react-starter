@@ -1,4 +1,4 @@
-## Minimal Dependency React Starter (1.3.3)
+## Minimal Dependency React Starter (1.3.4)
 
 ### Features:
 
@@ -6,11 +6,12 @@
 1. <a href="https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html">New JSX Transform</a>
 1. Jest & React Testing Library
 1. ESLint & Prettier
-1. Scss/Css support
+1. Scss support
 1. `@/*` alias
    (can be used instead of `./src/*`)
 
 ### Environment Variables
+
 Environment Variables can be loaded through .env.* files.
 
 | File Name        | Condition                 |
@@ -19,10 +20,10 @@ Environment Variables can be loaded through .env.* files.
 | .env.production  | Production Only (`build`) |
 | .env             | Always                    |
 
-> NOTE: variable names must be prefixed with `APP_PUBLIC_`
+> NOTE: variable names must be prefixed with `APP_`
 > in order to be accessible through the App.
 
-> eg: `APP_PUBLIC_API_URL=https://www.api.domain.com`
+> eg: `APP_API_URL=https://www.api.domain.com`
 
 ### Scripts
 

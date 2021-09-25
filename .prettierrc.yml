@@ -1,9 +1,12 @@
 semi: false
 tabWidth: 2
+endOfLine: lf
 useTabs: false
-printWidth: 65
+printWidth: 70
 singleQuote: false
 arrowParens: avoid
 trailingComma: all
+jsxSingleQuote: true
 bracketSpacing: true
+quoteProps: consistent
 jsxBracketSameLine: false

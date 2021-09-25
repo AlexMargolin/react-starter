@@ -34,7 +34,7 @@ const tsRule = () => ({
  * Style Rule.
  */
 const styleRule = () => ({
-  test: /\.(css|scss)$/,
+  test: /\.(scss)$/,
   use: [
     {
       loader: MiniCssExtractPlugin.loader,
@@ -68,7 +68,7 @@ const styleRule = () => ({
  * Images Rule.
  */
 const imagesRule = () => ({
-  test: /\.(svg|png|jpe?g|gif)$/,
+  test: /\.(svg|png)$/,
   type: "asset/resource",
   generator: {
     filename: envCmp(
@@ -122,6 +122,7 @@ const environmentPlugin = new webpack.EnvironmentPlugin(envs)
  * @type {webpack.Configuration}
  */
 module.exports = {
+  stats: "errors-only",
   bail: envCmp(false, true),
   mode: envCmp("development", "production"),
   devtool: envCmp("inline-source-map", false),
@@ -157,14 +158,7 @@ module.exports = {
     },
   },
   devServer: {
-    hot: true,
-    port: 9000,
-    overlay: true,
-    compress: true,
-    host: "localhost",
-    transportMode: "ws",
-    stats: "errors-only",
-    contentBase: appendRoot(defaults.publicDir),
+    historyApiFallback: true,
   },
   module: {
     rules: [tsRule(), styleRule(), imagesRule()],
