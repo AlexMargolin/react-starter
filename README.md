@@ -1,4 +1,4 @@
-## Minimal Dependency React Starter (1.3.4)
+## Minimal Dependency React Starter (2.0.0)
 
 ### Features:
 
@@ -34,6 +34,8 @@ Environment Variables can be loaded through .env.* files.
 <hr />
 
 ### Changelog
+
+`2.0.0` - React 18
 
 `1.3.0` - Separated Webpack scripts into separate files
 
