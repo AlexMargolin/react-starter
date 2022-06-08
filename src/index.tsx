@@ -1,6 +1,6 @@
 import App from "@/App"
 import React from "react"
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
 import modules from "@/styles/global.module.scss"
 
 const root = document.createElement("div")
@@ -9,9 +9,8 @@ Object.assign(root, {
   className: modules.app,
 })
 
-ReactDOM.render(
+createRoot(document.body.appendChild(root)).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.body.appendChild(root),
 )
