@@ -1,5 +1,6 @@
 module.exports = {
   preset: "ts-jest",
+  testEnvironment: "jsdom",
   moduleNameMapper: {
     "\\.(scss|svg)$": "identity-obj-proxy",
     "^@/(.*)": "<rootDir>/src/$1",
