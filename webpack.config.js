@@ -148,9 +148,6 @@ module.exports = {
       },
     },
   },
-  experiments: {
-    asset: true,
-  },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
