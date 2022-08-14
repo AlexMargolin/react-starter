@@ -1,4 +1,4 @@
-## Minimal Dependency React Starter (2.0.0)
+## React Starter (2.1.0)
 
 ### Features:
 
